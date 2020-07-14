@@ -36,8 +36,8 @@ def scan():
 
 def delete(path):
     try:
-        os.remove(path)  
-        print("the file {} deleted successfully.")                  
+        #os.remove(path)  
+        print("the file {} deleted successfully.".format(path.split('/')[-1]))                  
     except Exception as ex:
         print("ERROR : {}".format(ex))
 
@@ -55,10 +55,18 @@ def act(path):
         if choice.upper().strip() == 'Y' or choice.upper().strip() == 'N':
             break        
         print(choice.upper())        
-        
-    
 
+def exists(dir):
+    if os.path.isdir(dir.strip()):
+        return True
+    return False
+def get_root():
+    directory = str(input("Enter the directory absolute path:\t"))             
+    while not exists(directory):
+        print("Sorry, wrong path.")
+        directory = str(input("Enter the directory absolute path:\t"))
+    return directory    
 
-
+ROOT = get_root()    
 scan()
-print(len(DEFECTED))
+print("\n\nYour directory had {} defected files.".format(len(DEFECTED)))

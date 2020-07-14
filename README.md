@@ -1,6 +1,4 @@
 #		SIMPLE ANTIVIRUS
 
-	TO DO
-1. crawl all the files in a certain directory.
-2. run the collected files against viruses.txt.
-3. ask to delete the defected files or not.
+Simple antivirus software using python. 
+the script compares the md5 hash for all the executable files in the identifed directory with a huge list of md5 hashes for collected viruses.
