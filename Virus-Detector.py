@@ -36,7 +36,7 @@ def scan():
 
 def delete(path):
     try:
-        #os.remove(path)  
+        os.remove(path)  
         print("the file {} deleted successfully.".format(path.split('/')[-1]))                  
     except Exception as ex:
         print("ERROR : {}".format(ex))
